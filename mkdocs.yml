@@ -1,0 +1,5 @@
+site_name: Moononster's blog
+nav:
+  - ComputerSystem: index.md
+  - DiscreteMath: about.md
+theme: readthedocs
