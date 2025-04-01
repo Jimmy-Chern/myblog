@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/about/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/fds/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>DiscreteMath - Moononster's blog</title>
+    <title>FDS - Moononster's blog</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "DiscreteMath";
-        var mkdocs_page_input_path = "about.md";
-        var mkdocs_page_url = "/myblog/about/";
+        var mkdocs_page_name = "FDS";
+        var mkdocs_page_input_path = "fds.md";
+        var mkdocs_page_url = "/myblog/fds/";
       </script>
     
     <!--[if lt IE 9]>
@@ -40,12 +40,22 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">ComputerSystem</a>
+                <li class="toctree-l1"><a class="reference internal" href="../system/">ComputerSystem</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../discreteMath/">DiscreteMath</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../repair/">Bug</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">DiscreteMath</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">FDS</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">等价类</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -63,9 +73,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">DiscreteMath</li>
+      <li class="breadcrumb-item active">FDS</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/Jimmy-Chern/myblog/edit/master/docs/about.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/Jimmy-Chern/myblog/edit/master/docs/fds.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -73,53 +83,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="_1">强归纳法</h3>
-<p>例子：n简单多边形可以n-1个三角化</p>
-<blockquote>
-<p>lemma：任何简单多边形都有内部对角线</p>
-</blockquote>
-<p>良序性：任何非空子集有最小元
-与两个归纳法等价</p>
-<p>例子：
-- 有限长度字符串（字典序）
-- 带余除法q,r唯一性
-- n有向完全图有n-环，必有3-环</p>
-<h3 id="_2">递归定义</h3>
-<pre><code>函数：f(0) f(n)-&gt;f(n+1)
+                <h2 id="_1">并查集</h2>
+<h3 id="_2">等价类</h3>
+<p>e.g:
+- 网络连接
+- 最小生成树，无向n权重图，n-1条边，无回路连通，sum最小（n城市，铺光纤代价最小，连接城市）：边从小往大排，不构成回路（使用等价类判断）即可</p>
+<p><em>划分等价类算法（并查集）</em>
+- nuion
+- find：找树根-&gt;树表示法</p>
+<p><em>集合表示</em>
+- 一个指针指向父亲data,parent链表
+- 数组表示：下标表示元素，键表示parent（优化：union by height ; union by size）</p>
+<p><em>聪明的Union algorithm</em>
+- union by size: 树根的key用负数表示</p>
+<pre><code>S[root]=-size
 </code></pre>
-<p>例子：斐波那契数</p>
-<blockquote>
-<p>lame theorem:
-欧几里得算法复杂度小于等于5*较小的数的十进制位数 </p>
-</blockquote>
-<h3 id="_3">广义归纳法</h3>
-<p>例子：NxN（字典序）</p>
-<p>科普：分形（自相似性）
-- 雪花曲线（长度趋于无穷）
-？分数维度
-- 斯宾斯基三角</p>
-<h3 id="_4">递归算法</h3>
-<pre><code>定义：分解问题，小至直接解决
+<p>lemma：height(T)&lt;=log2N+1</p>
+<p><em>Path Compression</em></p>
+<pre><code>if S[x]&lt;=0 return X;
+else return s[x]=find(s[x],s)
 </code></pre>
-<p>例子：
-- n!
-- pow(a,n)
-- gcd
-- pow(b,n)modm
-- binary search
-- 归并</p>
-<h1 id="_5">计数</h1>
-<p>乘法原则，加法原则</p>
-<p>例子：
-- 1~300选a,b,c：st.（a+b+c）mod3=0</p>
-<p>减法原则，除法原则</p>
-<p>例子：
-- 圆桌排列</p>
+<p>循环：
+- 遍历到root
+- lead trail,将路径一一连到root</p>
+<blockquote>
+<p>lemma
+$k_1M\alpha(M,N)&lt;=T(M,N)&lt;=k2M\alpha(M,N)$</p>
+</blockquote>
+<p>$\alpha$是阿克曼函数的反函数，增长极慢</p>
+<blockquote>
+<p>proof：101计划</p>
+</blockquote>
+<h2 id="_3">图算法</h2>
+<p>e.g
+- 神经网络</p>
+<ul>
+<li>G(V,E)</li>
+<li>有向图无向图</li>
+<li>完全图</li>
+<li>邻接</li>
+<li>路径，长度（边数）</li>
+<li>简单路径（除头尾无重叠）</li>
+<li>cycle: cycle imple path</li>
+<li>connected graph(U)</li>
+<li>component of undirected G: the maximal connected subgraph</li>
+<li>Tree: connected acyclic graph</li>
+<li>DAG: directed acyclic graph</li>
+<li>Strongly connected directed graph G
+/weakly connected(D)</li>
+<li>Strongly connected component(D)</li>
+<li>Degree
+/in-degree /out-degree<blockquote>
+<p>$ e=\sum_{i=0}^{n-1}d_i/2$</p>
+</blockquote>
+</li>
+</ul>
+<p>e.g
+- communication detection</p>
+<h3 id="_4">图表示</h3>
+<ul>
+<li>adjacency matrix</li>
+<li>adjacency list
+有向图：邻接表（出）和逆邻接表（入）</li>
+<li>十字链表(Directed G)</li>
+<li>multilist(undirected G)</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="ComputerSystem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../repair/" class="btn btn-neutral float-left" title="Bug"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -146,7 +179,7 @@
         </span>
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../repair/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
