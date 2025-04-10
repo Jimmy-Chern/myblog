@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/assembly/">
+        <link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/linear/">
       
       
-        <link rel="prev" href="../fds/">
+        <link rel="prev" href="../infoTheory/">
       
-      
-        <link rel="next" href="../infoTheory/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>x86 - Moononster's blog</title>
+        <title>linearAlgebra - Moononster's blog</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stack" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              x86
+              linearAlgebra
             
           </span>
         </div>
@@ -327,30 +325,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    x86
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../assembly/" class="md-nav__link">
         
   
   
@@ -361,42 +339,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      stack
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#softeyes" class="md-nav__link">
-    <span class="md-ellipsis">
-      softeyes调试工具
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -427,10 +369,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../linear/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    linearAlgebra
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -441,6 +403,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      内积空间
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -470,18 +459,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      stack
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#softeyes" class="md-nav__link">
-    <span class="md-ellipsis">
-      softeyes调试工具
+      内积空间
     </span>
   </a>
   
@@ -506,94 +486,10 @@
   
 
 
-  <h1>x86</h1>
+  <h1>linearAlgebra</h1>
 
-<h3 id="stack">stack</h3>
-<pre><code>link
-td
-in td:
-C-R修改register显示位数
-tab让光标按照顺时针实现窗口跳跃
-shift+tab逆时针跳转
-F8下一步
-栈内地址由小到大：78 56 34 12
-</code></pre>
-<pre><code>cs :code segment
-ss : 堆栈段地址
-length of code segment:look at the last one,and make it can be divided by 10h
-cs+length of code segment:cs+2:[0] = ss
-sp:stack pointer
-ip:instruction pointer
-源程序中没有定义堆栈段时，操作系统会分配一个堆栈，其中ss=首段段地址，sp=0
-操作系统初始化工作：cs,ip的赋值
-ds:自动赋值为psp的段地址
-堆栈溢出：ss:sp落在1000:0-1000:1FF之外
-ss sp:1000:0
-push时，sp指到1000:FFFE(整个段最后一个字,单任务系统，ds,cs,ss后所有空间可用）
-由于code段20h字节，20h&lt;=sp&lt;=FFFE时，都不算溢出
-</code></pre>
-<pre><code>push:sp=sp-2
-word ptr ss:[sp]=ax
-pop:1.bx=word ptr ss:[sp](assignment)
-2.sp=sp+2
-//原位置出现垃圾信息：CPU收到clock中断信号后，插入int 8h（对操作系统中的某个变量做加法，隐含做三个push动作
-和三个pop动作）
-eax(32bit)&gt;ax(the right 16bit of eax.）&gt;ah(left 8 bit of ax)=al(right 8 bit of ax)
-push eax:1.sp=sp-4
-2.dword ptr ss:[sp]=eax
-push的最小单位是两字节
-</code></pre>
-<pre><code>.386//tell the compiler that i may use 32register.
-datasegment use16//段内偏移地址依旧采用16位，否则他会跟着用32位
-</code></pre>
-<pre><code>code segment use16;
-abc dd 81279034
-data ends
-//二进制输出:ROL eax,4循环左移0000...1111做按位与，得到mod
-</code></pre>
-<pre><code>data1 segment
-abc db 1,2,3
-data1 ends
-data2 segment
-xyz db 4,5,6
-data2 ends
-code segment
-assume cs:code,ds:data1,es:data2//ds及es的初始值=psp段地址
-main:
-</code></pre>
-<pre><code>mov ax,1234
-mov bx,5678h
-push ax; First In
-push bx,222h
-mov ax,1111
-mov bx 2222
-pop bx
-</code></pre>
-<pre><code>stk segment stack use16//每一个段加use16
-db 200h dup('s')
-stk ends
-</code></pre>
-<h3 id="softeyes">softeyes调试工具</h3>
-<pre><code>Bochs for windows
- cd \masm
-masm hello;
-masm c
-link c
-ldr c.exe
-
-ec:enter code//OR F6
-F2:set a software breakpoint in cursor
-x:execute//OR:F9
-F4:go to cursor
-d ds:bx//用来观察指定地址只想的变量的值
-硬件断点bpmb a000:0 w(breakpoint on memory byte)w:write(条件)
-bl//breakpoint list
-bc 0
-bc *//br
-bd #//禁用某个断点breakpoint disable
-breakpoint enable
-
-</code></pre>
+<h2 id="_1">内积空间</h2>
+<p><a href="../attachments/dotProduct1.pdf">1</a></p>
 
 
 
