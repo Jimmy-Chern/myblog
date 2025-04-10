@@ -14,6 +14,8 @@
         <link rel="prev" href="../repair/">
       
       
+        <link rel="next" href="../assembly/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
@@ -60,11 +62,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -291,19 +288,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    FDS
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -316,71 +300,50 @@
 
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      并查集
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="并查集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      等价类
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      图算法
-    </span>
-  </a>
   
-    <nav class="md-nav" aria-label="图算法">
-      <ul class="md-nav__list">
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      图表示
-    </span>
-  </a>
   
-</li>
+  
+  <span class="md-ellipsis">
+    x86
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infoTheory/" class="md-nav__link">
         
-      </ul>
-    </nav>
   
-</li>
-      
-    </ul>
   
-</nav>
-      
+  <span class="md-ellipsis">
+    infoTheory
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -403,62 +366,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      并查集
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="并查集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      等价类
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      图算法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="图算法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      图表示
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -478,71 +385,7 @@
 
   <h1>FDS</h1>
 
-<h2 id="_1">并查集</h2>
-<h3 id="_2">等价类</h3>
-<p>e.g:
-- 网络连接
-- 最小生成树，无向n权重图，n-1条边，无回路连通，sum最小（n城市，铺光纤代价最小，连接城市）：边从小往大排，不构成回路（使用等价类判断）即可</p>
-<p><em>划分等价类算法（并查集）</em>
-- nuion
-- find：找树根-&gt;树表示法</p>
-<p><em>集合表示</em>
-- 一个指针指向父亲data,parent链表
-- 数组表示：下标表示元素，键表示parent（优化：union by height ; union by size）</p>
-<p><em>聪明的Union algorithm</em>
-- union by size: 树根的key用负数表示</p>
-<pre><code>S[root]=-size
-</code></pre>
-<p>lemma：height(T)&lt;=log2N+1</p>
-<p><em>Path Compression</em></p>
-<pre><code>if S[x]&lt;=0 return X;
-else return s[x]=find(s[x],s)
-</code></pre>
-<p>循环：
-- 遍历到root
-- lead trail,将路径一一连到root</p>
-<blockquote>
-<p>lemma
-<span class="arithmatex">\(k_1M\alpha(M,N)&lt;=T(M,N)&lt;=k2M\alpha(M,N)\)</span></p>
-</blockquote>
-<p><span class="arithmatex">\(\alpha\)</span>是阿克曼函数的反函数，增长极慢</p>
-<blockquote>
-<p>proof：101计划</p>
-</blockquote>
-<h2 id="_3">图算法</h2>
-<p>e.g
-- 神经网络</p>
-<ul>
-<li>G(V,E)</li>
-<li>有向图无向图</li>
-<li>完全图</li>
-<li>邻接</li>
-<li>路径，长度（边数）</li>
-<li>简单路径（除头尾无重叠）</li>
-<li>cycle: cycle imple path</li>
-<li>connected graph(U)</li>
-<li>component of undirected G: the maximal connected subgraph</li>
-<li>Tree: connected acyclic graph</li>
-<li>DAG: directed acyclic graph</li>
-<li>Strongly connected directed graph G
-/weakly connected(D)</li>
-<li>Strongly connected component(D)</li>
-<li>Degree
-/in-degree /out-degree<blockquote>
-<p>$ e=\sum_{i=0}^{n-1}d_i/2$</p>
-</blockquote>
-</li>
-</ul>
-<p>e.g
-- communication detection</p>
-<h3 id="_4">图表示</h3>
-<ul>
-<li>adjacency matrix</li>
-<li>adjacency list
-有向图：邻接表（出）和逆邻接表（入）</li>
-<li>十字链表(Directed G)</li>
-<li>multilist(undirected G)</li>
-</ul>
+<p><em>预计以手稿形式上传</em></p>
 
 
 
