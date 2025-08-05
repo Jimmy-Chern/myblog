@@ -2,22 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Jimmy-Chern.github.io/myblog/</loc>
-         <lastmod>2025-04-20</lastmod>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/ODE/</loc>
+         <lastmod>2025-08-05</lastmod>
     </url>
     <url>
          <loc>https://Jimmy-Chern.github.io/myblog/abstractAlgebra/</loc>
-         <lastmod>2025-04-20</lastmod>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/bookReview/</loc>
+         <lastmod>2025-08-05</lastmod>
     </url>
     <url>
          <loc>https://Jimmy-Chern.github.io/myblog/bug/</loc>
-         <lastmod>2025-04-20</lastmod>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/complexFunction/</loc>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/graphTheory/</loc>
+         <lastmod>2025-08-05</lastmod>
     </url>
     <url>
          <loc>https://Jimmy-Chern.github.io/myblog/infoTheory/</loc>
-         <lastmod>2025-04-20</lastmod>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/mathematicalMethod/</loc>
+         <lastmod>2025-08-05</lastmod>
     </url>
     <url>
          <loc>https://Jimmy-Chern.github.io/myblog/repair/</loc>
-         <lastmod>2025-04-20</lastmod>
+         <lastmod>2025-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://Jimmy-Chern.github.io/myblog/rl/</loc>
+         <lastmod>2025-08-05</lastmod>
     </url>
 </urlset>
