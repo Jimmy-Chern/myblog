@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/complexFunction/">
+        <link rel="canonical" href="https://Jimmy-Chern.github.io/myblog/techBlog/">
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../rl/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>complexFunction - Moononster's blog</title>
+        <title>techBlog - Moononster's blog</title>
       
     
     
@@ -60,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mitocwnote" class="md-skip">
+        <a href="#techblogmd" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              complexFunction
+              techBlog
             
           </span>
         </div>
@@ -235,10 +239,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../techBlog/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    techBlog
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -249,6 +275,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs部署博客
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mkdocs部署博客">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servedeploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      serve/deploy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      炼丹
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="炼丹">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceleratedeepspeedpytorchtoymlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用accelerate,deepspeed,pytorch,写一个toymlp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -292,6 +401,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -300,20 +411,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mitocwnote" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      教材：mitocw电子note
+      工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs部署博客
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mkdocs部署博客">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servedeploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      serve/deploy
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      柯西-黎曼方程，解析与全纯
+      炼丹
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="炼丹">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceleratedeepspeedpytorchtoymlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用accelerate,deepspeed,pytorch,写一个toymlp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -336,13 +492,126 @@
   
 
 
-  <h1>complexFunction</h1>
+<h1 id="techblogmd">techBlog.md</h1>
+<p>记录学到的技术
+动机：本人目前的运维，工具和炼丹能力都不能恭维，因此写博客做记录.可能也会记录一点零碎的代码和数学，虽然他们不太适合写成博客</p>
+<h2 id="_1">工具</h2>
+<h3 id="mkdocs">mkdocs部署博客</h3>
+<h4 id="servedeploy">serve/deploy</h4>
+<pre><code>mkdocs build
+git init
+git add .
+git commit -m &quot;Deploy site&quot;
+git remote add origin https://github.com/your-username/your-repo.git
+git branch -M gh-pages
+git push -u origin gh-pages --force
+</code></pre>
+<p>遇到问题</p>
+<pre><code>Permission denied (publickey).
+</code></pre>
+<p>解决：</p>
+<pre><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+eval &quot;$(ssh-agent -s)&quot;
+ssh-add ~/.ssh/id_ed25519
+</code></pre>
+<p>将公钥添加到 GitHub 账户</p>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<pre><code>git push -u origin gh-pages --force
+</code></pre>
+<p>遇到问题
+gitpage仅显示根目录下的readme，没有显示site/
+原因：之前的方法是手动部署，然而手动部署应该push上去site文件夹，否则gitPage找不到入口
+解决：
+调整 mkdocs.yml 配置</p>
+<pre><code>site_name: My Docs
+repo_url: https://github.com/your-username/your-repo
+docs_dir: docs
+site_dir: site
+mkdocs build --clean
+mkdocs gh-deploy --force
+</code></pre>
+<p>github-setting-pages-branch:</p>
+<pre><code>/root
+</code></pre>
+<p>这样自动部署上去的就是site</p>
+<pre><code>alias ud='cp -r ~/note/* ~/my-project/docs/ &amp;&amp; source ~/noteenv/bin/activate'
+alias mks='cd ~/my-project &amp;&amp; mkdocs serve'
+alias mkd='cd ~/my-project &amp;&amp; mkdocs build --clean &amp;&amp; mkdocs gh-deploy'
+</code></pre>
+<p>ud,mks,mkd</p>
+<pre><code>site_name: Moononster's blog
+nav:
+  - home: index.md
+  - Bug: bug.md
+  - RL: rl.md
+theme:
+  name: material
+site_url: https://Jimmy-Chern.github.io/myblog
+repo_url: https://github.com/Jimmy-Chern/myblog
+docs_dir: docs
+site_dir: site
+plugins:
+  - search
 
-<h3 id="mitocwnote">教材：mitocw电子note</h3>
-<p><a href="https://ocw.mit.edu/courses/18-04-complex-variables-with-applications-spring-2018">MIT18.04</a>
-这套教程仍然是工科视角的。更加理论化的复分析预计在本次记录之后完成。</p>
-<h3 id="-">柯西-黎曼方程，解析与全纯</h3>
-<p><a href="../attachments/cr%E6%96%B9%E7%A8%8B.pdf">C-R方程</a></p>
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true       # 支持通用 LaTeX 语法
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
+</code></pre>
+<h2 id="_2">炼丹</h2>
+<h3 id="acceleratedeepspeedpytorchtoymlp">使用accelerate,deepspeed,pytorch,写一个toymlp</h3>
+<pre><code>(venv) (base) chenjunming@93:~$ pip install acceleate
+(venv) (base) chenjunming@93:~/toymlp$ accelerate config
+---------------------------------------------------------------------------------------In which compute environment are you running?
+This machine
+---------------------------------------------------------------------------------------Which type of machine are you using?
+multi-GPU
+How many different machines will you use (use more than 1 for multi-node training)? [1]: 1
+Should distributed operations be checked while running for errors? This can avoid timeout issues but will be slower. [yes/NO]: yes
+Do you wish to optimize your script with torch dynamo?[yes/NO]:yes
+---------------------------------------------------------------------------------------Which dynamo backend would you like to use?
+inductor
+Do you want to customize the defaults sent to torch.compile? [yes/NO]: No
+Do you want to use DeepSpeed? [yes/NO]: yes
+Do you want to specify a json file to a DeepSpeed config? [yes/NO]: yes
+Please enter the path to the json DeepSpeed config file: ./config.json
+Do you want to enable `deepspeed.zero.Init` when using ZeRO Stage-3 for constructing massive models? [yes/NO]: yes
+Do you want to enable Mixture-of-Experts training (MoE)? [yes/NO]: NO
+How many GPU(s) should be used for distributed training? [1]:2
+accelerate configuration saved at /home/chenjunming/.cache/huggingface/accelerate/default_config.yaml
+</code></pre>
+<p>config.json:</p>
+<pre><code>  GNU nano 6.2                              config.json                                       {
+  &quot;fp16&quot;: {
+    &quot;enabled&quot;: &quot;auto&quot;,
+    &quot;loss_scale&quot;: 0,
+    &quot;initial_scale_power&quot;: 16,
+    &quot;loss_scale_window&quot;: 1000,
+    &quot;hysteresis&quot;: 2,
+    &quot;min_loss_scale&quot;: 1
+  },
+  &quot;zero_optimization&quot;: {
+    &quot;stage&quot;: 2,
+    &quot;offload_optimizer_states&quot;: true,
+    &quot;offload_param_states&quot;: true,
+    &quot;allgather_partitions&quot;: true,
+    &quot;allgather_bucket_size&quot;: 2e8,
+    &quot;reduce_scatter&quot;: true,
+    &quot;reduce_bucket_size&quot;: 2e8
+  },
+  &quot;gradient_accumulation_steps&quot;: &quot;auto&quot;,
+  &quot;gradient_clipping&quot;: 1.0,
+  &quot;train_batch_size&quot;: &quot;auto&quot;,
+  &quot;train_micro_batch_size_per_gpu&quot;: &quot;auto&quot;,
+  &quot;wall_clock_breakdown&quot;: false
+}
+</code></pre>
+<p>看环境，检查</p>
+<pre><code>accelerate env
+accelerate test
+</code></pre>
 
 
 
